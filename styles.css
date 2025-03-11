@@ -6,6 +6,7 @@ body {
 
 header,
 main,
+
 footer {
     max-width: 800px;
     width: 100%;
@@ -21,6 +22,8 @@ header {
 }
 
 nav {
+    position: relative;
+    right: -220px;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -29,6 +32,15 @@ nav {
 nav i {
     font-size: 1.3rem;
 }
+
+nav a i.fa-github {
+color: black; /* GitHub icon color */
+}
+
+nav a i.fa-linkedin {
+color: #0077B5; /* LinkedIn icon color (official LinkedIn blue) */
+}
+
 
 main,
 section {
@@ -44,15 +56,27 @@ section {
     gap: 1rem;
 }
 
-.intro-header p {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+.intro-header 
+p {padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: -20px;
+    margin-bottom: -5px;
+    }
+
+
+h1 {
+    font-size: medium;
+    line-height: 1.8rem;
+    margin-top: -40px
 }
 
+
 .intro-description {
-    max-width: 500px;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    max-width: 700px;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    margin-top: 4%;
+    margin-bottom: -15%;
 }
 
 .links-container {
@@ -60,6 +84,7 @@ section {
     align-items: center;
     gap: 1rem;
     padding: 3rem 0;
+    margin-bottom: -15%;
 }
 
 .link-arrow {
@@ -71,6 +96,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    margin-bottom: 20px !important;
 }
 
 .cards-grid {
@@ -113,12 +139,83 @@ section {
     font-size: 0.8rem;
 }
 
-@media (min-width: 320px) {
+.memory-game-container h4 {
+text-align: center;
+display: block;
+margin: 0 auto;
+width: fit-content;
+}
+
+.memory-game-container button {
+display: block;
+margin: 20px auto; /* Centers horizontally */
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+}
+
+.intro-container {
+display: flex;
+align-items: center; /* Aligns h1 and image vertically */
+position: relative
+}
+
+
+
+.video-banner {
+position: absolute;
+pointer-events: none;
+top: 0;
+left: 50%;
+transform: translateX(-46%); /* Centers the banner */
+width: 100%; /* Adjust as needed */
+height: 230px; /* Adjust as needed */
+overflow: hidden;
+z-index: -1;
+}
+
+.video-bg {
+position: absolute;
+top: 40%;
+left: 40%;
+transform: translate(-50%, -50%);
+width: 100vw;  /* Ensures it fills the screen width */
+height: auto;   /* Keeps aspect ratio */
+min-height: 100%;
+object-fit: cover;
+}
+
+.icon-container {
+position: absolute;
+pointer-events: auto;
+top: 145px;  /* Adjusts vertical position */
+right: 45px; /* Adjusts horizontal position */
+display: flex;
+gap: 8.5px;  /* Space between icons */
+z-index: 1000; /* Ensures icons stay on top of video */
+}
+
+.icon-container a {
+font-size: 28px;  /* Adjust icon size */
+color: rgb(12, 11, 11); /* Change to preferred color */
+transition: transform 0.3s;
+}
+.icon-container a[href*="linkedin"] {
+color: #0077b5; /* LinkedIn blue */
+}
+
+.icon-container a:hover {
+transform: scale(1.8); /* Slight zoom effect */
+}   
+
+
+
+@media (min-width: 640px) {
     .project-card {
         flex-direction: row;
     }
 
     .project-card .img-div {
-        max-width: 30%;
+        max-width: 35%;
     }
 }
