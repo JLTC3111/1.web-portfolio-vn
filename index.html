@@ -12,338 +12,360 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-        <header>
-            <a href="/full-stack-course/"></a>
-        </header>
-        
-        <div class="video-banner">
-            <video class="video-bg" autoplay muted loop playsinline >
-                <source src="https://raw.githubusercontent.com/JLTC3111/audio-video/main/Adobe-cloud-flowing.mov" type="video/mp4">
-            </video>
-        </div>
-        <div class="icon-container">
-            <a target="_blank" href="https://github.com/JLTC3111">
-                <i class="fa-brands fa-github"></i>
-            </a>
-            <a target="_blank" href="https://www.linkedin.com/in/glory-bacon-815399355/">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-        </div>
+    <header>
+        <a href="/full-stack-course/"></a>
+    </header>
 
-<main>
-<section>
-    <div class="intro-container">
-        <div class="intro-header"> 
-        <h1>Xin Chào! Mình Là Long...</h1>
-        <style>
-            h1 {
-            font-family: 'Press Start 2P', cursive;
-         }
-        </style>
-        <p>Phát Triển Phần Mềm</p>
-        
-<div id="play-game">
-    <button onclick="playGame()">Chơi Game Nhé ⬅️💙</button>
-</div>
+    <div class="video-banner">
+        <video class="video-bg" autoplay muted loop playsinline>
+            <source src="https://raw.githubusercontent.com/JLTC3111/audio-video/main/Adobe-cloud-flowing.mov"
+                type="video/mp4">
+        </video>
+    </div>
+    <div class="icon-container">
+        <a target="_blank" href="https://github.com/JLTC3111">
+            <i class="fa-brands fa-github"></i>
+        </a>
+        <a target="_blank" href="https://www.linkedin.com/in/glory-bacon-815399355/">
+            <i class="fa-brands fa-linkedin"></i>
+        </a>
+    </div>
 
-<div style="display: none;" class="color-div">
-    <h4>Chọn Màu</h4>
-    <p style="display: none;">Ahhh...Bạn Đã Làm Hỏng Trang Web</p>
-    <input type="color" id="color-picker" onchange="changeColor()" value="#0084ff" />
-    <button style="display: none;" onclick="resetColor()">Làm Lại</button>
-</div>
+    <div class="language-switch">
+        <a href="https://dobaolongicueltd.netlify.app/" class="flag-icon">
+            🇬🇧
+        </a>
+        <a href="https://dobaolongicuevn.netlify.app/" class="flag-icon">
+            🇻🇳
+        </a>
+    </div>
+
+    <main>
+        <section>
+            <div class="intro-container">
+                <div class="intro-header">
+                    <h1>Xin Chào! Mình Là Long...</h1>
+                    <style>
+                        h1 {
+                            font-family: 'Press Start 2P', cursive;
+                        }
+                    </style>
+                    <p>Phát Triển Phần Mềm</p>
+
+                    <div id="play-game">
+                        <button onclick="playGame()">Chơi Game Nhé ⬅️💙</button>
+                    </div>
+
+                    <div style="display: none;" class="color-div">
+                        <h4>Chọn Màu</h4>
+                        <p style="display: none;">Ahhh...Bạn Đã Làm Hỏng Trang Web</p>
+                        <input type="color" id="color-picker" onchange="changeColor()" value="#0084ff" />
+                        <button style="display: none;" onclick="resetColor()">Làm Lại</button>
+                    </div>
+
+                    <script>
+                        // This is where we create the interactivity for our little color switching game
+
+                        // 1. select all the html elements so that we can later manipulate them
+                        const body = document.querySelector('body')
+                        const colorInput = document.getElementById('color-picker')
+                        const colorDiv = document.querySelector('.color-div')
+                        const hiddenText = document.querySelector('.color-div p')
+                        const resetBtn = document.querySelector('.color-div button')
+                        const playBtn = document.getElementById('play-game')
+
+                        // 2. create the functions 
+
+                        function playGame() {
+                            // this function enables the play of the game by showing the color selector input
+                            colorDiv.style.display = 'block'
+                            playBtn.style.display = 'none'
+                        }
+
+                        function changeColor() {
+                            // take the users selected color on the input, and assign it to be the background color of the website
+                            const selectedColor = colorInput.value
+                            body.style.background = selectedColor
+                            resetBtn.style.display = 'block'
+                            hiddenText.style.display = 'block'
+                            colorInput.style.display = 'none'
+                        }
+
+                        function resetColor() {
+                            body.style.background = 'white'
+                            colorInput.style.display = 'block'
+                            playBtn.style.display = 'block'
+
+                            hiddenText.style.display = 'none'
+                            resetBtn.style.display = 'none'
+                            colorDiv.style.display = 'none'
+                        }
+
+                        // 3. is to assign the functions to the buttons by adding them function call to the actual elements (done above in the html code)
+                    </script>
+
+
+                    <h5 class="intro-description">
+                        Chuyên ngành quản lý dự án, viết mã phần mềm theo sở thích. Mình hiện đang ở Hà Nội, Việt Nam.
+                        Mình thích đi bộ, chơi game trên điện thoại, học những kĩ năng mới và xây dựng những ứng dụng
+                        hữu ích trên internet. Là một người yêu thích công nghệ blockchain với ít kinh nghiệm viết mã
+                        Solidity trên nền tảng Ethereum.
+                    </h5>
+
+
+
+                    <div class="links-container">
+                        <i class="fa-solid link-arrow fa-arrow-right"></i>
+                        <a href="mailto:Long_do_bao2016@proton.me">
+                            Gửi Email
+                        </a>
+                        <a target="_blank" href="https://github.com/JLTC3111">GitHub</a>
+                        <a target="_blank" href="https://www.linkedin.com/in/glory-bacon-815399355">LinkedIn</a>
+                    </div>
+
+
+        </section>
+
+
+
+        <section>
+            <h2>Kĩ Năng</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Lĩnh Vực</th>
+                        <th>Công Nghệ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>ReactJS | React Native | NextJS | NodeJS & ExpressJS | SvelteKit | Qwik</td>
+                    </tr>
+                    <tr>
+                        <td>Python</td>
+                        <td>Data analysis | Django | Data visualization</td>
+                    </tr>
+                    <tr>
+                        <td>Web</td>
+                        <td>TailwindCSS | FantaCSS | Firebase | PostgreSQL | CI/CD | GIT | Docker | AWS
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Design</td>
+                        <td>Canvas | Pixlr | Microsoft Paint</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </section>
+
+        <section>
+            <h3>Các Ứng Dụng Đã Code</h3>
+            <div class="cards-grid">
+                <div class="project-card">
+                    <div>
+                        <p>19, Tháng 1, 2025</p>
+                        <h4>Ứng Dụng Nhắc Nhở Công Việc</h4>
+                        <div class="tech-list">
+                            <div class="card-button-secondary">
+                                <p>ReactJS</p>
+                            </div>
+                            <div class="card-button-secondary">
+                                <p>FantaCSS</p>
+                            </div>
+                            <div class="card-button-secondary">
+                                <p>JavaScript</p>
+                            </div>
+                        </div>
+                        <p>Đơn Giản & Hiệu Quả.
+                        </p>
+                        <div class="project-links">
+                            <a target="_blank" href="https://remindericuevn.netlify.app/">Click để chạy App</a>
+                            <a target="_blank" href="https://github.com/JLTC3111/Long-s-to-do-app-vn">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="video-project">
+                        <video class="video-proj" autoplay muted loop playsinline>
+                            <source
+                                src="https://raw.githubusercontent.com/JLTC3111/1.web-portfolio_vn/main/public/To-Do-App-Vn.mov"
+                                type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                    <div class="project-card">
+                        <div>
+                            <p>24 Tháng 1, 2024</p>
+                            <h4>Cơ Sở Dữ Liệu Pokemon</h4>
+                            <div class="tech-list">
+                                <div class="card-button-secondary">
+                                    <p>NextJS</p>
+                                </div>
+                                <div class="card-button-secondary">
+                                    <p>FantaCSS</p>
+                                </div>
+                                <div class="card-button-secondary">
+                                    <p>Stripe</p>
+                                </div>
+                            </div>
+                            <p>Tìm Kiếm Đơn Giản & Hiệu Quả - Không DDOS!
+                            </p>
+                            <div class="project-links">
+                                <a target="_blank" href="https://ldpoke.netlify.app/">Click để chạy App</a>
+                                <a target="_blank" href="https://github.com/JLTC3111/LD-s-Pokedex">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="video-project">
+                            <video class="video-proj" autoplay muted loop playsinline>
+                                <source
+                                    src="https://raw.githubusercontent.com/JLTC3111/1.web-portfolio-en/main/public/Pokemon%20video.mov"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                        <div class="project-card">
+                            <div>
+                                <p>15 Tháng 7, 2023</p>
+                                <h4>Expenny | Theo Dõi Các Subscriptions</h4>
+                                <div class="tech-list">
+                                    <div class="card-button-secondary">
+                                        <p>NextJS</p>
+                                    </div>
+                                    <div class="card-button-secondary">
+                                        <p>FantaCSS</p>
+                                    </div>
+                                    <div class="card-button-secondary">
+                                        <p>Firebase</p>
+                                    </div>
+                                </div>
+                                <p>Quản Lý & Theo Dõi Các Subscriptions của bạn!
+                                </p>
+                                <div class="project-links">
+                                    <a target="_blank" href="https://sub-tracker.netlify.app/">Click để chạy App</a>
+                                    <a target="_blank" href="https://github.com/JLTC3111">GitHub</a>
+                                </div>
+                            </div>
+                            <div class="video-project">
+                                <video class="video-proj" autoplay muted loop playsinline >
+                                    <source src="https://raw.githubusercontent.com/JLTC3111/1.web-portfolio-en/main/public/Expenny-App-en.mov" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            By<a href="https://www.linkedin.com/in/glory-bacon-815399355" target="_blank"> LD.</a> ⭐️ the repo on <a
+                target="_blank" href="https://github.com/JLTC3111">GitHub</a>
+        </p>
+    </footer>
+
+
+    <div id="memory-game" class="memory-game-container">
+        <h4>Kiểm Tra Trí Nhớ</h4>
+        <div class="memory-grid">
+            <!-- Cards will be dynamically generated -->
+        </div>
+        <button onclick="resetMemoryGame()">Chơi Lại!</button>
+    </div>
+
+    <style>
+        .memory-game {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 50px);
+            gap: 5px;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .card {
+            width: 50px;
+            height: 50px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 1s;
+        }
+
+        .flipped {
+            background: white;
+            transform: rotateY(180deg);
+        }
+    </style>
+
 
     <script>
-    // This is where we create the interactivity for our little color switching game
-    
-     // 1. select all the html elements so that we can later manipulate them
-    const body = document.querySelector('body')
-    const colorInput = document.getElementById('color-picker')
-    const colorDiv = document.querySelector('.color-div')
-    const hiddenText = document.querySelector('.color-div p')
-    const resetBtn = document.querySelector('.color-div button')
-    const playBtn = document.getElementById('play-game')
-    
-    // 2. create the functions 
-    
-    function playGame() {
-        // this function enables the play of the game by showing the color selector input
-        colorDiv.style.display = 'block'
-        playBtn.style.display = 'none'
-    }
-    
-    function changeColor() {
-        // take the users selected color on the input, and assign it to be the background color of the website
-        const selectedColor = colorInput.value
-        body.style.background = selectedColor
-        resetBtn.style.display = 'block'
-        hiddenText.style.display = 'block'
-        colorInput.style.display = 'none'
-    }
-    
-    function resetColor() {
-        body.style.background = 'white'
-        colorInput.style.display = 'block'
-        playBtn.style.display = 'block'
-    
-        hiddenText.style.display = 'none'
-        resetBtn.style.display = 'none'
-        colorDiv.style.display = 'none'
-    }
-    
-    // 3. is to assign the functions to the buttons by adding them function call to the actual elements (done above in the html code)
+        const symbols = ['💙', '🔥', '🌟', '🚀', '🎮', '🎵', '📷', '🧩'];
+        let cards = [...symbols, ...symbols];
+        let flippedCards = [];
+
+        function shuffle(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+
+        function createMemoryGame() {
+            const grid = document.querySelector('.memory-grid');
+            grid.innerHTML = '';
+            cards = shuffle(cards);
+
+            cards.forEach((symbol, index) => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.dataset.symbol = symbol;
+                card.dataset.index = index;
+                card.addEventListener('click', flipCard);
+                grid.appendChild(card);
+            });
+        }
+
+        function flipCard() {
+            if (flippedCards.length < 2 && !this.classList.contains('flipped')) {
+                this.classList.add('flipped');
+                this.innerHTML = this.dataset.symbol;
+                flippedCards.push(this);
+            }
+            if (flippedCards.length === 2) {
+                setTimeout(checkMatch, 500);
+            }
+        }
+
+        function checkMatch() {
+            const [card1, card2] = flippedCards;
+            if (card1.dataset.symbol !== card2.dataset.symbol) {
+                card1.classList.remove('flipped');
+                card2.classList.remove('flipped');
+                card1.innerHTML = '';
+                card2.innerHTML = '';
+            }
+            flippedCards = [];
+        }
+
+        function resetMemoryGame() {
+            flippedCards = [];
+            createMemoryGame();
+        }
+
+        createMemoryGame();
     </script>
 
-
-    <h5 class="intro-description"> 
-        Chuyên ngành quản lý dự án, viết mã phần mềm theo sở thích. Mình hiện đang ở Hà Nội, Việt Nam. Mình thích đi bộ, chơi game trên điện thoại, học những kĩ năng mới và xây dựng những ứng dụng hữu ích trên internet. Là một người yêu thích công nghệ blockchain với ít kinh nghiệm viết mã Solidity trên nền tảng Ethereum. 
-    </h5>
-
-   
-
-    <div class="links-container">
-        <i class="fa-solid link-arrow fa-arrow-right"></i>
-        <a href="mailto:Long_do_bao2016@proton.me">
-            Gửi Email
-        </a>
-        <a target="_blank" href="https://github.com/JLTC3111">GitHub</a>
-        <a target="_blank" href="https://www.linkedin.com/in/glory-bacon-815399355">LinkedIn</a>
-    </div>
-    
-    
-</section>
-
-
-
-<section>
-    <h2>Kĩ Năng</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Lĩnh Vực</th>
-                <th>Công Nghệ</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>JavaScript</td>
-                <td>ReactJS | React Native | NextJS | NodeJS & ExpressJS | SvelteKit | Qwik</td>
-            </tr>
-            <tr>
-                <td>Python</td>
-                <td>Data analysis | Django | Data visualization</td>
-            </tr>
-            <tr>
-                <td>Web</td>
-                <td>TailwindCSS | FantaCSS | Firebase | PostgreSQL | CI/CD | GIT | Docker | AWS
-                </td>
-            </tr>
-            <tr>
-                <td>Design</td>
-                <td>Canvas | Pixlr | Microsoft Paint</td>
-            </tr>
-        </tbody>
-    </table>
-
-       
-</section>
-
-<section>
-    <h3>Các Ứng Dụng Đã Code</h3> 
-    <div class="cards-grid">
-        <div class="project-card">
-            <div>
-                <p>19, Tháng 1, 2025</p>
-                <h4>Ứng Dụng Nhắc Nhở Công Việc</h4>
-                <div class="tech-list">
-                    <div class="card-button-secondary">
-                        <p>ReactJS</p>
-                    </div>
-                    <div class="card-button-secondary">
-                        <p>FantaCSS</p>
-                    </div>
-                    <div class="card-button-secondary">
-                        <p>JavaScript</p>
-                    </div>
-                </div>
-                <p>Đơn Giản & Hiệu Quả.
-                </p>
-                <div class="project-links">
-                    <a target="_blank" href="https://remindericuevn.netlify.app/">Click để chạy App</a>
-                    <a target="_blank" href="https://github.com/JLTC3111/Long-s-to-do-app-vn">GitHub</a>
-                </div>
-            </div>
-            <div class="img-div">
-                <img class="big-img"
-                    src="https://github.com/JLTC3111/1.web-portfolio_vn/blob/main/public/To-Do-App-Vn.png?raw=true"
-                    alt="smoljames-thumbnail" />
-            </div>
-        </div>
-        <div class="project-card">
-            <div>
-                <p>24 Tháng 1, 2024</p>
-                <h4>Cơ Sở Dữ Liệu Pokemon</h4>
-                <div class="tech-list">
-                    <div class="card-button-secondary">
-                        <p>NextJS</p>
-                    </div>
-                    <div class="card-button-secondary">
-                        <p>FantaCSS</p>
-                    </div>
-                    <div class="card-button-secondary">
-                        <p>Stripe</p>
-                    </div>
-                </div>
-                <p>Tìm Kiếm Đơn Giản & Hiệu Quả - Không DDOS!
-                </p>
-                <div class="project-links">
-                    <a target="_blank" href="https://ldpoke.netlify.app/">Click để chạy App</a>
-                    <a target="_blank" href="https://github.com/JLTC3111/LD-s-Pokedex">GitHub</a>
-                </div>
-            </div>
-            <div class="img-div">
-                <img class="big-img"
-                    src="https://github.com/JLTC3111/1.web-portfolio_vn/blob/main/public/My-Pokedex-Vn.png?raw=true"
-                    alt="smoljames-thumbnail" />
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div>
-                <p>15 Tháng 7, 2023</p>
-                <h4>Expenny | Theo Dõi Các Subscriptions</h4>
-                <div class="tech-list">
-                    <div class="card-button-secondary">
-                        <p>NextJS</p>
-                    </div>
-                    <div class="card-button-secondary">
-                        <p>FantaCSS</p>
-                    </div>
-                    <div class="card-button-secondary">
-                        <p>Firebase</p>
-                    </div>
-                </div>
-                <p>Quản Lý & Theo Dõi Các Subscriptions của bạn!
-                </p>
-                <div class="project-links">
-                    <a target="_blank" href="https://sub-tracker.netlify.app/">Click để chạy App</a>
-                    <a target="_blank" href="https://github.com/JLTC3111">GitHub</a>
-                </div>
-            </div>
-            <div class="img-div">
-                <img class="big-img"
-                    src="https://github.com/JLTC3111/1.web-portfolio/blob/main/public/expenny.png?raw=true"
-                    alt="smoljames-thumbnail" />
-            </div>
-        </div>
-    </div>
-</section>
-</main>
-
-<footer>
-    <p> 
-        By<a href="https://www.linkedin.com/in/glory-bacon-815399355" target="_blank"> LD.</a> ⭐️ the repo on <a target="_blank"
-        href="https://github.com/JLTC3111">GitHub</a>
-    </p>
-</footer>
-
-
-<div id="memory-game" class="memory-game-container">
-    <h4>Kiểm Tra Trí Nhớ</h4>
-    <div class="memory-grid">
-        <!-- Cards will be dynamically generated -->
-    </div>
-    <button onclick="resetMemoryGame()">Chơi Lại!</button>
-</div>
-
-<style>
-    .memory-game {
-        text-align: center;
-        margin-top: 20px;
-    }
-    .memory-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 50px);
-        gap: 5px;
-        justify-content: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    .card {
-        width: 50px;
-        height: 50px;
-        background: #ddd;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: transform 1s;
-    }
-    .flipped {
-        background: white;
-        transform: rotateY(180deg);
-    }
-</style>
-
-<script>
-    const symbols = ['💙', '🔥', '🌟', '🚀', '🎮', '🎵', '📷', '🧩'];
-    let cards = [...symbols, ...symbols];
-    let flippedCards = [];
-
-    function shuffle(array) {
-        return array.sort(() => Math.random() - 0.5);
-    }
-
-    function createMemoryGame() {
-        const grid = document.querySelector('.memory-grid');
-        grid.innerHTML = '';
-        cards = shuffle(cards);
-
-        cards.forEach((symbol, index) => {
-            const card = document.createElement('div');
-            card.classList.add('card');
-            card.dataset.symbol = symbol;
-            card.dataset.index = index;
-            card.addEventListener('click', flipCard);
-            grid.appendChild(card);
-        });
-    }
-
-    function flipCard() {
-        if (flippedCards.length < 2 && !this.classList.contains('flipped')) {
-            this.classList.add('flipped');
-            this.innerHTML = this.dataset.symbol;
-            flippedCards.push(this);
-        }
-        if (flippedCards.length === 2) {
-            setTimeout(checkMatch, 500);
-        }
-    }
-
-    function checkMatch() {
-        const [card1, card2] = flippedCards;
-        if (card1.dataset.symbol !== card2.dataset.symbol) {
-            card1.classList.remove('flipped');
-            card2.classList.remove('flipped');
-            card1.innerHTML = '';
-            card2.innerHTML = '';
-        }
-        flippedCards = [];
-    }
-
-    function resetMemoryGame() {
-        flippedCards = [];
-        createMemoryGame();
-    }
-
-    createMemoryGame();
-</script>
-
-
+</body>
 </html>
