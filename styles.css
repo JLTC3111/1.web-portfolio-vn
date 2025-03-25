@@ -220,27 +220,24 @@ color: #0077b5; /* LinkedIn blue */
 transform: scale(1.8); /* Slight zoom effect */
 }   
 
-.language-switch {
-    text-decoration: none; /* Remove underline */
-    position: absolute;
-    top: 10.5%;
-    right: 10%;
-    font-size: 28px;
-    color: inherit; 
+.language-switcher {
+    position: absolute; /* Ensure it moves relative to <body> */
+    top: 120px; /* Adjust vertical positioning */
+    right: 45px; /* Adjust horizontal positioning */
     display: flex;
-    gap: 8.5px;
-    
+    gap: 9px; /* Adjust spacing between flags */
+    align-items: center;
 }
 
-flag-icon {
-    text-decoration: none;
-    transition: transform 0.3s ease-in-out;
-    
+.flag-link {
+    font-size: 18px; /* Adjust flag size */
+    cursor: pointer;
+    transition: transform 0.3s;
+    z-index: 1000; /* Ensure it stays on top of video */
 }
 
-.flag-icon:hover {
-    transform: scale(1.6);
-    text-decoration: none; /* Remove underline */
+.flag-link:hover {
+    transform: scale(1.5);
 }
 
 
@@ -279,31 +276,51 @@ font-family: 'Press Start 2P', cursive;
       }
       
       .video-project:hover {
-        transform: scale(1.2); /* Slight zoom-in effect */
+        transform: scale(1.25); /* Slight zoom-in effect */
         transition: transform 0.3s ease-in-out;
       }
 
-      .language-switch {
-        text-decoration: none; /* Remove underline */
-        position: absolute;
-        top: 10px;
-        right: 120px;
-        font-size: 28px;
-        color: inherit; 
+    .language-switcher {
+        position: absolute; /* Ensure it moves relative to <body> */
+        top: 120px; /* Adjust vertical positioning */
+        right: 120px; /* Adjust horizontal positioning */
         display: flex;
-        gap: 8.5px;
+        gap: 8.5px; /* Adjust spacing between flags */
+        align-items: center;
+    }
+    
+    .flag-link {
+        font-size: 20px; /* Adjust flag size */
+        cursor: pointer;
+        transition: transform 0.3s;
+        z-index: 1000; /* Ensure it stays on top of video */
+    }
+    
+    .flag-link:hover {
+        transform: scale(1.5);
+    }
+      
+    .icon-container {
+        position: absolute;
+        pointer-events: auto;
+        top: 150px;  /* Adjusts vertical position */
+        right: 45px; /* Adjusts horizontal position */
+        display: flex;
+        gap: 8.5px;  /* Space between icons */
+        z-index: 1000; /* Ensures icons stay on top of video */
+        }
         
-    }
-    
-    flag-icon {
-        text-decoration: none;
-        transition: transform 0.3s ease-in-out;
+        .icon-container a {
+        font-size: 28px;  /* Adjust icon size */
+        color: rgb(12, 11, 11); /* Change to preferred color */
+        transition: transform 0.3s;
+        }
+        .icon-container a[href*="linkedin"] {
+        color: #0077b5; /* LinkedIn blue */
+        }
         
-    }
-    
-    .flag-icon:hover {
-        transform: scale(1.6);
-        text-decoration: none; /* Remove underline */
-    }
-    
+        .icon-container a:hover {
+        transform: scale(1.8); /* Slight zoom effect */
+        }   
+        
 }

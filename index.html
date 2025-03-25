@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="fanta.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
@@ -37,15 +38,13 @@
         </a>
     </div>
 
-    <div class="language-switch">
-        <a href="https://dobaolongicueltd.netlify.app/" class="flag-icon" onclick="navigateTo('https://dobaolongicueltd.netlify.app/')">🇬🇧</a>
-        <a href="https://dobaolongicuevn.netlify.app/" class="flag-icon" onclick="navigateTo('https://dobaolongicuevn.netlify.app/')">🇻🇳</a>
-
-<script>
-  function navigateTo(url) {
-    window.location.href = url;
-  }
-</script>
+    <div class="language-switcher">
+        <a href="https://dobaolongicueltd.netlify.app/" class="flag-link">
+            <span class="flag-icon flag-icon-gb"></span>
+        </a>
+        <a href="https://dobaolongicuevn.netlify.app/" class="flag-link">
+            <span class="flag-icon flag-icon-vn"></span>
+        </a>
     </div>
 
     <main>
@@ -202,65 +201,67 @@
                         </video>
                     </div>
                 </div>
-                    <div class="project-card">
-                        <div>
-                            <p>24 Tháng 1, 2024</p>
-                            <h4>Cơ Sở Dữ Liệu Pokemon</h4>
-                            <div class="tech-list">
-                                <div class="card-button-secondary">
-                                    <p>NextJS</p>
-                                </div>
-                                <div class="card-button-secondary">
-                                    <p>FantaCSS</p>
-                                </div>
-                                <div class="card-button-secondary">
-                                    <p>Stripe</p>
-                                </div>
+                <div class="project-card">
+                    <div>
+                        <p>24 Tháng 1, 2024</p>
+                        <h4>Cơ Sở Dữ Liệu Pokemon</h4>
+                        <div class="tech-list">
+                            <div class="card-button-secondary">
+                                <p>NextJS</p>
                             </div>
-                            <p>Tìm Kiếm Đơn Giản & Hiệu Quả - Không DDOS!
-                            </p>
-                            <div class="project-links">
-                                <a target="_blank" href="https://ldpoke.netlify.app/">Click để chạy App</a>
-                                <a target="_blank" href="https://github.com/JLTC3111/LD-s-Pokedex">GitHub</a>
+                            <div class="card-button-secondary">
+                                <p>FantaCSS</p>
+                            </div>
+                            <div class="card-button-secondary">
+                                <p>Stripe</p>
                             </div>
                         </div>
-                        <div class="video-project">
-                            <video class="video-proj" autoplay muted loop playsinline>
-                                <source
-                                    src="https://raw.githubusercontent.com/JLTC3111/1.web-portfolio-en/main/public/Pokemon%20video.mov"
-                                    type="video/mp4">
-                            </video>
+                        <p>Tìm Kiếm Đơn Giản & Hiệu Quả - Không DDOS!
+                        </p>
+                        <div class="project-links">
+                            <a target="_blank" href="https://ldpoke.netlify.app/">Click để chạy App</a>
+                            <a target="_blank" href="https://github.com/JLTC3111/LD-s-Pokedex">GitHub</a>
                         </div>
                     </div>
-                        <div class="project-card">
-                            <div>
-                                <p>15 Tháng 7, 2023</p>
-                                <h4>Expenny | Theo Dõi Các Subscriptions</h4>
-                                <div class="tech-list">
-                                    <div class="card-button-secondary">
-                                        <p>NextJS</p>
-                                    </div>
-                                    <div class="card-button-secondary">
-                                        <p>FantaCSS</p>
-                                    </div>
-                                    <div class="card-button-secondary">
-                                        <p>Firebase</p>
-                                    </div>
-                                </div>
-                                <p>Quản Lý & Theo Dõi Các Subscriptions của bạn!
-                                </p>
-                                <div class="project-links">
-                                    <a target="_blank" href="https://sub-tracker.netlify.app/">Click để chạy App</a>
-                                    <a target="_blank" href="https://github.com/JLTC3111">GitHub</a>
-                                </div>
+                    <div class="video-project">
+                        <video class="video-proj" autoplay muted loop playsinline>
+                            <source
+                                src="https://raw.githubusercontent.com/JLTC3111/1.web-portfolio-en/main/public/Pokemon%20video.mov"
+                                type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div>
+                        <p>15 Tháng 7, 2023</p>
+                        <h4>Expenny | Theo Dõi Các Subscriptions</h4>
+                        <div class="tech-list">
+                            <div class="card-button-secondary">
+                                <p>NextJS</p>
                             </div>
-                            <div class="video-project">
-                                <video class="video-proj" autoplay muted loop playsinline >
-                                    <source src="https://raw.githubusercontent.com/JLTC3111/1.web-portfolio-en/main/public/Expenny-App-en.mov" type="video/mp4">
-                                </video>
+                            <div class="card-button-secondary">
+                                <p>FantaCSS</p>
+                            </div>
+                            <div class="card-button-secondary">
+                                <p>Firebase</p>
                             </div>
                         </div>
+                        <p>Quản Lý & Theo Dõi Các Subscriptions của bạn!
+                        </p>
+                        <div class="project-links">
+                            <a target="_blank" href="https://sub-tracker.netlify.app/">Click để chạy App</a>
+                            <a target="_blank" href="https://github.com/JLTC3111">GitHub</a>
+                        </div>
                     </div>
+                    <div class="video-project">
+                        <video class="video-proj" autoplay muted loop playsinline>
+                            <source
+                                src="https://raw.githubusercontent.com/JLTC3111/1.web-portfolio-en/main/public/Expenny-App-en.mov"
+                                type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -370,4 +371,5 @@
     </script>
 
 </body>
+
 </html>
