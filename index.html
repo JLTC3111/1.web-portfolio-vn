@@ -38,12 +38,14 @@
     </div>
 
     <div class="language-switch">
-        <a href="https://dobaolongicueltd.netlify.app/" class="flag-icon">
-            🇬🇧
-        </a>
-        <a href="https://dobaolongicuevn.netlify.app/" class="flag-icon">
-            🇻🇳
-        </a>
+        <a href="https://dobaolongicueltd.netlify.app/" class="flag-icon" onclick="navigateTo('https://dobaolongicueltd.netlify.app/')">🇬🇧</a>
+        <a href="https://dobaolongicuevn.netlify.app/" class="flag-icon" onclick="navigateTo('https://dobaolongicuevn.netlify.app/')">🇻🇳</a>
+
+<script>
+  function navigateTo(url) {
+    window.location.href = url;
+  }
+</script>
     </div>
 
     <main>
