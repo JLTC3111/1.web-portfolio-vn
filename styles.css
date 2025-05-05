@@ -179,23 +179,20 @@ object-fit: cover;
 }
 
 .video-project {
-    position: relative;
-    width: 50vw; /* Adjust width as needed */
-    max-width: 500px; /* Prevent it from being too large */
-    aspect-ratio: 4 / 3; /* Maintain video ratio */
-
-    
-    border-radius: 10px; /* Optional: rounded corners */
-    overflow: hidden; /* Ensures no weird overflow */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
-  }
+position: relative;
+width: 50vw; /* Adjust width as needed */
+max-width: 500px; /* Prevent it from being too large */
+aspect-ratio: 4 / 3; /* Maintain video ratio */
+border-radius: 10px; /* Optional: rounded corners */
+overflow: hidden; /* Ensures no weird overflow */
+box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
   
-  .video-project video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Keeps it nicely filled */
-  }
-
+.video-project video {
+width: 100%;
+height: 100%;
+object-fit: cover; /* Keeps it nicely filled */
+}
 
 .icon-container {
 position: absolute;
