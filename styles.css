@@ -63,7 +63,10 @@ p {padding-top: 1.5rem;
     margin-bottom: -8px;
     }
 
-h1 {margin-top: -40px}
+h1 {
+    margin-top: -180px;
+    font-family: 'Press Start 2P', cursive;
+}
 
 .intro-description {
     max-width: 700px;
@@ -153,8 +156,6 @@ align-items: center; /* Aligns h1 and image vertically */
 position: relative
 }
 
-
-
 .video-banner {
 position: absolute;
 pointer-events: none;
@@ -194,64 +195,52 @@ height: 100%;
 object-fit: cover; /* Keeps it nicely filled */
 }
 
-.icon-container {
-position: absolute;
-pointer-events: auto;
-top: 150px;  /* Adjusts vertical position */
-right: 45px; /* Adjusts horizontal position */
-display: flex;
-gap: 8.5px;  /* Space between icons */
-z-index: 1000; /* Ensures icons stay on top of video */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 20px;
+  max-width: 80px;
+  margin: 10.5vh 10vw 0 auto;
+  margin-left: auto;
+  padding: 20px;
 }
 
-.icon-container a {
-font-size: 28px;  /* Adjust icon size */
-color: rgb(12, 11, 11); /* Change to preferred color */
-transition: transform 0.3s;
-}
-.icon-container a[href*="linkedin"] {
-color: #0077b5; /* LinkedIn blue */
-}
-
-.icon-container a:hover {
-transform: scale(1.8); /* Slight zoom effect */
-}   
-
-.language-switcher {
-    position: absolute; /* Ensure it moves relative to <body> */
-    top: 120px; /* Adjust vertical positioning */
-    right: 45px; /* Adjust horizontal positioning */
-    display: flex;
-    gap: 9px; /* Adjust spacing between flags */
-    align-items: center;
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+  background: #f3f3f3;
+  font-size: 28px;
+ 
 }
 
-.flag-link {
-    font-size: 18px; /* Adjust flag size */
-    cursor: pointer;
-    transition: transform 0.3s;
-    z-index: 1000; /* Ensure it stays on top of video */
-}
+.box a {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s;
+} 
 
-.flag-link:hover {
+.box:hover a {
     transform: scale(1.5);
 }
 
-
-h1 {
-font-family: 'Press Start 2P', cursive;
+.box a[href*="linkedin"] {
+color: #0077b5; /* LinkedIn blue */
 }
 
-
+.flag-icon {
+    font-size: 20px;
+}
 
 @media (min-width: 1366px) {
     .project-card {
         flex-direction: row;
-    }
+      }
 
     .project-card .img-div {
         max-width: 35%;
-    }
+      }
 
     .video-project {
         position: relative;
@@ -275,49 +264,6 @@ font-family: 'Press Start 2P', cursive;
       .video-project:hover {
         transform: scale(1.25); /* Slight zoom-in effect */
         transition: transform 0.3s ease-in-out;
-      }
-
-    .language-switcher {
-        position: absolute; /* Ensure it moves relative to <body> */
-        top: 120px; /* Adjust vertical positioning */
-        right: 120px; /* Adjust horizontal positioning */
-        display: flex;
-        gap: 8.5px; /* Adjust spacing between flags */
-        align-items: center;
-    }
-    
-    .flag-link {
-        font-size: 20px; /* Adjust flag size */
-        cursor: pointer;
-        transition: transform 0.3s;
-        z-index: 1000; /* Ensure it stays on top of video */
-    }
-    
-    .flag-link:hover {
-        transform: scale(1.5);
-    }
-      
-    .icon-container {
-        position: absolute;
-        pointer-events: auto;
-        top: 150px;  /* Adjusts vertical position */
-        right: 45px; /* Adjusts horizontal position */
-        display: flex;
-        gap: 8.5px;  /* Space between icons */
-        z-index: 1000; /* Ensures icons stay on top of video */
-        }
-        
-        .icon-container a {
-        font-size: 28px;  /* Adjust icon size */
-        color: rgb(12, 11, 11); /* Change to preferred color */
-        transition: transform 0.3s;
-        }
-        .icon-container a[href*="linkedin"] {
-        color: #0077b5; /* LinkedIn blue */
-        }
-        
-        .icon-container a:hover {
-        transform: scale(1.8); /* Slight zoom effect */
-        }   
+      } 
         
 }
