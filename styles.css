@@ -212,7 +212,7 @@ object-fit: cover; /* Keeps it nicely filled */
   height: 10px;
   background: #f3f3f3;
   font-size: 28px;
- 
+  z-index: 99;
 }
 
 .box a {
@@ -229,8 +229,17 @@ object-fit: cover; /* Keeps it nicely filled */
 color: #0077b5; /* LinkedIn blue */
 }
 
+.flag-link {
+  display: inline-block;
+  padding: 10px; /* Adjust if needed */
+  cursor: pointer;
+  z-index: 1;
+}
+
 .flag-icon {
-    font-size: 20px;
+  font-size: 20px;
+  display: inline-block;
+  pointer-events: none; /* Prevent the span from hijacking clicks */
 }
 
 @media (min-width: 1366px) {
