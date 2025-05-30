@@ -122,7 +122,6 @@
     body {
         background: var(--background-primary);
         color: var(--color-primary);
-        font-size: 0.875rem;
         line-height: 1.6rem;
     }
     
