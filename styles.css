@@ -68,6 +68,10 @@ h1 {
     font-family: 'Press Start 2P', cursive;
 }
 
+.skill-section {
+    margin-top: clamp(.25rem, 2.5vw, 1.25rem);
+}
+
 .intro-description {
     max-width: 700px;
     padding-top: 2.5rem;
