@@ -188,7 +188,6 @@
     }
     
     
-    
     address {
         font-style: normal;
     }
@@ -242,8 +241,6 @@
         padding-top: 10px;
         font-size: 0.8rem;
     }
-    
-    
     
     
     ul,
@@ -390,8 +387,6 @@
         background-color: var(--background-muted);
     }
     
-    
-    }
     
     button,
     select,
