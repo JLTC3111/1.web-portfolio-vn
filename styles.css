@@ -68,6 +68,61 @@ h1 {
     font-family: 'Press Start 2P', cursive;
 }
 
+.contact-sidebar {
+    position: fixed; /* Stays in place as the user scrolls */
+    right: 1.75%; /* Adjust as needed for desired distance from the right edge */
+    top: 67%; /* Center vertically */
+    transform: translateY(-70%); /* Adjust for perfect vertical centering */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 12.5px; /* Space between icons */
+    z-index: 14; /* Ensure it stays on top of other content */
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 0;
+    width: fit-content;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 4.5s ease-in-out;
+}
+
+.contact-sidebar .contact-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:50px;
+    height:50px;
+    background-color: transparent; /* Or the specific color from the image */
+}
+
+.contact-sidebar .contact-item svg {
+    width: 45%; /* Adjust icon size within the circle */
+    height: 45%; /* Adjust icon size within the circle */
+}
+
+.contact-sidebar .music-bars {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.contact-sidebar .music-bars svg {
+  transform: rotate(90deg);
+}
+
+/* Hover effects for a better user experience */
+.contact-item:hover {
+    transform: scale(1.25); /* Slightly enlarge on hover */
+    transition: all 0.5s ease-in-out; /* Smooth transition */
+}
+
+.icon-bar {
+  width: 15px;            /* Or any thickness you want */
+  height: 1px;          /* Set a visible height */
+  background-color:rgba(0, 0, 0, 0.25);
+  margin: -7.5px auto;     /* Space around the bar */
+  border-left: .5px dotted black; /* Creates a vertical dotted line */
+  border-right: .5px dotted black;
+}
+
 .skill-section {
     margin-top: clamp(.25rem, 2.5vw, 1.25rem);
 }
@@ -106,13 +161,35 @@ h1 {
 }
 
 .project-card {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap; /* fallback for small screens */
 }
 
-.project-card>div:first-of-type {
-    flex: 1;
+.project-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.project-card > div:first-child {
+  flex: 1 1 300px;
+}
+
+.video-project {
+  flex: 1 1 100px;
+  max-width: 180px;
+}
+
+.video-proj {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
 }
 
 .project-links {
@@ -167,7 +244,7 @@ top: 0;
 left: 50%;
 transform: translateX(-46%); /* Centers the banner */
 width: 100%; /* Adjust as needed */
-height: 230px; /* Adjust as needed */
+height: 250px; /* Adjust as needed */
 overflow: hidden;
 z-index: -1;
 }
@@ -186,8 +263,8 @@ object-fit: cover;
 .video-project {
 position: relative;
 width: 50vw; /* Adjust width as needed */
-max-width: 500px; /* Prevent it from being too large */
-aspect-ratio: 4 / 3; /* Maintain video ratio */
+max-width: 300px; /* Prevent it from being too large */
+aspect-ratio: 4 / 4; /* Maintain video ratio */
 border-radius: 10px; /* Optional: rounded corners */
 overflow: hidden; /* Ensures no weird overflow */
 box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
@@ -245,13 +322,19 @@ color: #0077b5; /* LinkedIn blue */
   pointer-events: none; /* Prevent the span from hijacking clicks */
 }
 
-@media (min-width: 1366px) {
+@media (max-width: 1366px) {
     .project-card {
         flex-direction: row;
       }
 
     .project-card .img-div {
         max-width: 35%;
+      }
+
+    .project-card:hover {
+        transform: scale(1.015);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
       }
 
     .video-project {
@@ -277,5 +360,20 @@ color: #0077b5; /* LinkedIn blue */
         transform: scale(1.25); /* Slight zoom-in effect */
         transition: transform 0.3s ease-in-out;
       } 
+
+      .contact-sidebar {
+        top:65%;
+        right:1%;
+      }
+    
+      .contact-sidebar .contact-item {
+        width:38px;
+        height:38px;
+      }
+    
+      .contact-sidebar .contact-item svg{
+        width:35%;
+        height:35%;
+      }
         
 }
