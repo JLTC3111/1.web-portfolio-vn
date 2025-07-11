@@ -85,6 +85,14 @@ h1 {
     animation: fadeIn 4.5s ease-in-out;
 }
 
+.contact-sidebar .music-bars {
+  pointer-events: auto;
+  cursor: pointer;
+}
+.contact-sidebar .music-bars svg {
+  transform: rotate(90deg);
+}
+
 .contact-sidebar .contact-item {
     display: flex;
     justify-content: center;
@@ -97,15 +105,6 @@ h1 {
 .contact-sidebar .contact-item svg {
     width: 45%; /* Adjust icon size within the circle */
     height: 45%; /* Adjust icon size within the circle */
-}
-
-.contact-sidebar .music-bars {
-  pointer-events: auto;
-  cursor: pointer;
-}
-
-.contact-sidebar .music-bars svg {
-  transform: rotate(90deg);
 }
 
 /* Hover effects for a better user experience */
@@ -121,6 +120,47 @@ h1 {
   margin: -7.5px auto;     /* Space around the bar */
   border-left: .5px dotted black; /* Creates a vertical dotted line */
   border-right: .5px dotted black;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 100px;
+  background-color: transparent;
+  color: linear-gradient(
+    to bottom,
+    #ffa500 0%,     /* bright orange */
+    #e69500 10%,    /* deeper orange */
+    #cc8400 20%,    /* golden brown */
+    #b36b00 30%,    /* rich amber */
+    #994d00 40%,    /* burnt orange */
+    #803300 50%,    /* dark brownish orange */
+    #662200 60%,    /* brown */
+    #4d1a0d 70%,    /* very dark reddish-brown */
+    #331111 80%,    /* almost black with a hint of red */
+    #1a1a1a 90%,    /* charcoal */
+    #000000 100%    /* true black */
+  );;
+  text-align: center;
+  border-radius: 6px;
+  padding: 2.5px 3px;
+  position: absolute;
+  z-index: 1;
+  bottom: 5%; /* above the icon */
+  left: 0%;
+  margin-left: -80px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 12px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 
 .skill-section {

@@ -56,7 +56,8 @@
     <main>
 
         <div class="contact-sidebar">
-            <div class="contact-item music-bars"><svg id="visualizer" width="30px" height="30px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <div class="contact-item music-bars tooltip">
+            <svg id="visualizer" width="30px" height="30px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
               <path 
                 d="M2 3h12M2 7h12M2 11h12" 
                 stroke="#000000" 
@@ -64,13 +65,17 @@
                 stroke-linecap="round" 
                 fill="none"
               />
-            </svg></div>
+            </svg>
+            <span class="tooltiptext">Lazy Love 🎧 </span>
+        </div>
             <div class="icon-bar"></div>
-            <a href="tel:+842437728485" class="contact-item call-icon">
+            <a href="tel:+84375889900" class="contact-item call-icon tooltip">
                 <svg width="30px" height="30px" viewBox="0 0 24 24" id="phone" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color"><path id="primary" d="M20.19,13a10,10,0,0,1-3.43-.91,2,2,0,0,0-2.56.83l-.51.85a12.69,12.69,0,0,1-3.44-3.45l.86-.49a2,2,0,0,0,.83-2.56A10,10,0,0,1,11,3.81,2,2,0,0,0,9,2H5.13A3,3,0,0,0,2.86,3a3.13,3.13,0,0,0-.71,2.43A19,19,0,0,0,18.58,21.85a3,3,0,0,0,.42,0,3,3,0,0,0,2-.73,3,3,0,0,0,1-2.26V15A2,2,0,0,0,20.19,13Z" fill="#ffffff" stroke="black" ></path></svg>
+                <span class="tooltiptext">Gọi Điện</span>
             </a>
             <div class="icon-bar"></div>
-            <a href="#/Contact" onclick="loadPage('Contact');" data-page="Contact" class="contact-item calendar-icon">
+            <a href="#/Contact" onclick="loadPage('Contact');" data-page="Contact" class="contact-item calendar-icon tooltip">
+                <span class="tooltiptext">Lịch 📅</span>
             <?xml version="1.0" encoding="iso-8859-1"?>
             <svg height="80px" width="80px" xmlns:xlink="http://www.w3.org/1999/xlink"
               viewBox="0 0 611.998 611.998" xml:space="preserve">
@@ -103,8 +108,9 @@
             </svg>  
             </a>
             <div class="icon-bar"></div>
-            <a href="https://zalo.me/84768748391" target="_blank" class="contact-item zalo-icon">
-                <svg width="30" height="30" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a href="https://zalo.me/84375889900" target="_blank" class="contact-item zalo-icon tooltip">
+                <span class="tooltiptext">Zalo 💬</span>
+                <svg width="30px" height="30px" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M22.782 0.166016H27.199C33.2653 0.166016 36.8103 1.05701 39.9572 2.74421C43.1041 4.4314 45.5875 6.89585 47.2557 10.0428C48.9429 13.1897 49.8339 16.7347 49.8339 22.801V27.1991C49.8339 33.2654 48.9429 36.8104 47.2557 39.9573C45.5685 43.1042 43.1041 45.5877 39.9572 47.2559C36.8103 48.9431 33.2653 49.8341 27.199 49.8341H22.8009C16.7346 49.8341 13.1896 48.9431 10.0427 47.2559C6.89583 45.5687 4.41243 43.1042 2.7442 39.9573C1.057 36.8104 0.166016 33.2654 0.166016 27.1991V22.801C0.166016 16.7347 1.057 13.1897 2.7442 10.0428C4.43139 6.89585 6.89583 4.41245 10.0427 2.74421C13.1707 1.05701 16.7346 0.166016 22.782 0.166016Z" fill="#0068FF"/>
                 <path opacity="0.12" fill-rule="evenodd" clip-rule="evenodd" d="M49.8336 26.4736V27.1994C49.8336 33.2657 48.9427 36.8107 47.2555 39.9576C45.5683 43.1045 43.1038 45.5879 39.9569 47.2562C36.81 48.9434 33.265 49.8344 27.1987 49.8344H22.8007C17.8369 49.8344 14.5612 49.2378 11.8104 48.0966L7.27539 43.4267L49.8336 26.4736Z" fill="#001A33"/>
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M7.779 43.5892C10.1019 43.846 13.0061 43.1836 15.0682 42.1825C24.0225 47.1318 38.0197 46.8954 46.4923 41.4732C46.8209 40.9803 47.1279 40.4677 47.4128 39.9363C49.1062 36.7779 50.0004 33.22 50.0004 27.1316V22.7175C50.0004 16.629 49.1062 13.0711 47.4128 9.91273C45.7385 6.75436 43.2461 4.28093 40.0877 2.58758C36.9293 0.894239 33.3714 0 27.283 0H22.8499C17.6644 0 14.2982 0.652754 11.4699 1.89893C11.3153 2.03737 11.1636 2.17818 11.0151 2.32135C2.71734 10.3203 2.08658 27.6593 9.12279 37.0782C9.13064 37.0921 9.13933 37.1061 9.14889 37.1203C10.2334 38.7185 9.18694 41.5154 7.55068 43.1516C7.28431 43.399 7.37944 43.5512 7.779 43.5892Z" fill="white"/>
@@ -116,13 +122,15 @@
                 </svg>
             </a>
             <div class="icon-bar"></div>
-            <a href="https://www.facebook.com/profile.php?id=100075982245583" target="_blank" class="contact-item messenger-icon">
+            <a href="https://wa.me/6584363476" target="_blank" rel="noopener noreferrer" class="contact-item whatsapp-icon tooltip">
+                <span class="tooltiptext">WhatsApp 💬</span>
                 <svg xmlns="http://www.w3.org/2000/svg"
-                aria-label="Messenger" role="img"
-                viewBox="0 0 512 512"><rect
-                width="30" height="30"
-                rx="15%"
-                fill="#fff"/><linearGradient id="a" x1="256" x2="256" y1="78.2" y2="441.2" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#00B2FF"/><stop offset="1" stop-color="#006AFF"/></linearGradient><path fill="url(#a)" d="M256 78.2c-102.4 0-181.8 75 -181.8 176.4c0 53 21.7 98.8 57 130.4a14.7 14.7 0 015 10.4l1 32.3a14.6 14.6 0 0020.4 12.9l36-16a14.5 14.5 0 019.8-.7a197.8 197.8 0 0052.6 7c102.4 0 181.8-75 181.8 -176.3S358.4 78.2 256 78.2z"/><path fill="#fff" d="M146.8 306.1l53.4-84.7a27.3 27.3 0 0139.5-7.3l42.5 31.9a11 11 0 0013 0l57.5-43.6c7.6-5.8 17.6 3.4 12.5 11.5l-53.4 84.7a27.3 27.3 0 01-39.4 7.3L229.9 274a11 11 0 00-13.2 0l-57.4 43.6c-7.6 5.8-17.6 -3.4 -12.5 -11.5z"/></svg>
+                    aria-label="WhatsApp" role="img"
+                    viewBox="0 0 512 512"><rect
+                    width="512px" height="512px"
+                    rx="45%"
+                    fill="#25d366"/><path fill="#25d366" stroke="#ffffff" stroke-width="26" d="M123 393l14-65a138 138 0 1150 47z"/><path fill="#ffffff" d="M308 273c-3-2-6-3-9 1l-12 16c-3 2-5 3-9 1-15-8-36-17-54-47-1-4 1-6 3-8l9-14c2-2 1-4 0-6l-12-29c-3-8-6-7-9-7h-8c-2 0-6 1-10 5-22 22-13 53 3 73 3 4 23 40 66 59 32 14 39 12 48 10 11-1 22-10 27-19 1-3 6-16 2-18"/>
+                </svg>
             </a>
           </div>
         </div>
@@ -135,7 +143,7 @@
                             font-family: 'Press Start 2P', cursive;
                         }
                     </style>
-                    <p>Phát Triển Phần Mềm</p>
+                    <p>Full Stack Engineer</p>
 
                     <div id="play-game">
                         <button onclick="playGame()">Chơi Game Nhé ⬅️💙</button>
@@ -148,9 +156,6 @@
                         <button style="display: none;" onclick="resetColor()">Làm Lại</button>
                     </div>
 
-
-
-
                     <h5 class="intro-description">
                         Chuyên ngành quản lý dự án, viết mã phần mềm theo sở thích. Mình hiện đang ở Hà Nội, Việt Nam.
                         Mình thích đi bộ, chơi game trên điện thoại, học những kĩ năng mới và xây dựng những ứng dụng
@@ -158,21 +163,14 @@
                         Solidity trên nền tảng Ethereum.
                     </h5>
 
-
-
                     <div class="links-container">
                         <i class="fa-solid link-arrow fa-arrow-right"></i>
-                        <a href="mailto:Long_do_bao2016@proton.me">
+                        <a href="mailto:dev@icue.vn">
                             Gửi Email
                         </a>
-                        <a target="_blank" href="https://github.com/JLTC3111">GitHub</a>
-                        <a target="_blank" href="https://www.linkedin.com/in/glory-bacon-815399355">LinkedIn</a>
                     </div>
 
-
         </section>
-
-
 
         <section class="skill-section">
             <h2>Kĩ Năng</h2>
@@ -199,7 +197,7 @@
                     </tr>
                     <tr>
                         <td>Cloud Services</td>
-                        <td>Firebase | PostgreSQL | CI/CD | GIT | Docker | AWS</td>
+                        <td>Firebase | PostgreSQL | CI/CD | GIT | Docker | Supabase | Vercel</td>
                     </tr>
                     <tr>
                         <td>Design</td>
@@ -229,7 +227,7 @@
                                 <p>JavaScript</p>
                             </div>
                         </div>
-                        <p>Trang web giới thiệu viện quy mô nhỏ.
+                        <p>Thông tin về sự kiện,cập nhật xu hướng trong lĩnh vực  quy hoạch. Nền tảng kết nối chuyên gia, đầu tư nguồn nhân lực và cập nhật tin tức cho cộng đồng.
                         </p>
                         <div class="project-links">
                             <a target="_blank" href="https://icue.vn">Live</a>
@@ -240,6 +238,66 @@
                         <video class="video-proj" autoplay muted loop playsinline>
                             <source
                                 src="public/icue-vn.mp4"
+                                type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div>
+                        <p>10 Tháng 7, 2025</p>
+                        <h4>Quản Lý Hợp Đồng</h4>
+                        <div class="tech-list">
+                            <div class="card-button-secondary">
+                                <p>ReactJS, NextJS, Supabase</p>
+                            </div>
+                            <div class="card-button-secondary">
+                                <p>TailwindCSS, GSAP, Framer Motion</p>
+                            </div>
+                            <div class="card-button-secondary">
+                                <p>JavaScript</p>
+                            </div>
+                        </div>
+                        <p>Tối ưu hóa toàn bộ vòng đời hợp đồng, tạo, chỉnh sửa, theo dõi, ký và lưu trữ hợp đồng, Hỗ trợ cộng tác thời gian thực, phân quyền chi tiết, quản lý phiên bản, thông báo, tìm kiếm thông minh và đa ngôn ngữ.
+                        </p>
+                        <div class="project-links">
+                            <a target="_blank" href="https://contracticue.netlify.app/">Live</a>
+                            <a target="_blank" href="https://github.com/JLTC3111/contract-management-app">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="video-project">
+                        <video class="video-proj" autoplay muted loop playsinline>
+                            <source
+                                src="public/demo_contract.mp4"
+                                type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div>
+                        <p>3 Tháng 7, 2025</p>
+                        <h4>Ứng dụng nén File</h4>
+                        <div class="tech-list">
+                            <div class="card-button-secondary">
+                                <p>Python</p>
+                            </div>
+                            <div class="card-button-secondary">
+                                <p>Tkinter</p>
+                            </div>
+                            <div class="card-button-secondary">
+                                <p>PyInstaller</p>
+                            </div>
+                        </div>
+                        <p>Riêng tư, giúp giảm dung lượng tệp mà không làm giảm chất lượng. Kéo và thả tài liệu, hình ảnh để nén ngay lập tức, hỗ trợ batch processing. Hoạt động ngoại tuyến và không theo dõi dữ liệu. Giao diện gọn gàng, hiệu quả
+                        </p>
+                        <div class="project-links">
+                            <a target="_blank" href="https://icue.vn">Live</a>
+                            <a target="_blank" href="https://github.com/JLTC3111/ICUE-mainsite-vn">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="video-project">
+                        <video class="video-proj" autoplay muted loop playsinline>
+                            <source
+                                src="public/file_compressor.mp4"
                                 type="video/mp4">
                         </video>
                     </div>
