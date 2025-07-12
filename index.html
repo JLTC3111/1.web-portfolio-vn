@@ -75,7 +75,7 @@
             </a>
             <div class="icon-bar"></div>
             <a href="#/Contact" onclick="loadPage('Contact');" data-page="Contact" class="contact-item calendar-icon tooltip">
-                <span class="tooltiptext">Lịch 📅</span>
+                <span class="tooltiptext"></span>
             <?xml version="1.0" encoding="iso-8859-1"?>
             <svg height="80px" width="80px" xmlns:xlink="http://www.w3.org/1999/xlink"
               viewBox="0 0 611.998 611.998" xml:space="preserve">
@@ -123,7 +123,7 @@
             </a>
             <div class="icon-bar"></div>
             <a href="https://wa.me/6584363476" target="_blank" rel="noopener noreferrer" class="contact-item whatsapp-icon tooltip">
-                <span class="tooltiptext">WhatsApp 💬</span>
+                <span class="tooltiptext">WhatsApp 📟</span>
                 <svg xmlns="http://www.w3.org/2000/svg"
                     aria-label="WhatsApp" role="img"
                     viewBox="0 0 512 512"><rect
@@ -146,14 +146,14 @@
                     <p>Full Stack Engineer</p>
 
                     <div id="play-game">
-                        <button onclick="playGame()">Chơi Game Nhé ⬅️💙</button>
+                        <button class="play-game-btn">Chơi Game Nhé ⬅️💙</button>
                     </div>
 
-                    <div style="display: none;" class="color-div">
+                    <div class="color-div hidden">
                         <h4>Chọn Màu</h4>
-                        <p style="display: none;">Ahhh...Bạn Đã Làm Hỏng Trang Web</p>
-                        <input type="color" id="color-picker" onchange="changeColor()" value="#0084ff" />
-                        <button style="display: none;" onclick="resetColor()">Làm Lại</button>
+                        <p class="hidden-text">Ahhh...Bạn Đã Làm Hỏng Trang Web</p>
+                        <input type="color" id="color-picker" value="#0084ff" />
+                        <button class="reset-btn">Làm Lại</button>
                     </div>
 
                     <h5 class="intro-description">
@@ -415,8 +415,14 @@
         }
     </style>
 
-
-
+    <!-- Calendar Modal -->
+    <div id="calendar-modal" style="display:none;position:fixed;z-index:10000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;">
+        <div id="calendar-modal-content" style="background:#fff;padding:32px 32px 24px 32px;border-radius:20px;box-shadow:0 8px 40px rgba(0,0,0,0.25);position:relative;max-width:95vw;max-height:90vh;overflow:auto;display:flex;flex-direction:column;align-items:center;">
+        <button id="calendar-modal-close" style="position:absolute;top:12px;right:12px;font-size:2rem;background:none;border:none;cursor:pointer;">&times;</button>
+        <!-- SVG will be injected here -->
+        <div id="calendar-modal-svg"></div>
+        </div>
+    </div>
 
 </body>
 

@@ -188,10 +188,22 @@ h1 {
 }
 
 .color-div {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-bottom: 20px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 20px !important;
+}
+
+.color-div.hidden {
+  display: none;
+}
+
+.color-div .hidden-text {
+  display: none;
+}
+
+.color-div .reset-btn {
+  display: none;
 }
 
 .cards-grid {

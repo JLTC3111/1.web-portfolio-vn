@@ -13,7 +13,7 @@ const playBtn = document.getElementById('play-game')
 
 function playGame() {
     // this function enables the play of the game by showing the color selector input
-    colorDiv.style.display = 'block'
+    colorDiv.classList.remove('hidden')
     playBtn.style.display = 'none'
 }
 
@@ -21,8 +21,8 @@ function changeColor() {
     // take the users selected color on the input, and assign it to be the background color of the website
     const selectedColor = colorInput.value
     body.style.background = selectedColor
-    resetBtn.style.display = 'block'
-    hiddenText.style.display = 'block'
+    resetBtn.classList.remove('reset-btn')
+    hiddenText.classList.remove('hidden-text')
     colorInput.style.display = 'none'
 }
 
@@ -31,9 +31,9 @@ function resetColor() {
     colorInput.style.display = 'block'
     playBtn.style.display = 'block'
 
-    hiddenText.style.display = 'none'
-    resetBtn.style.display = 'none'
-    colorDiv.style.display = 'none'
+    hiddenText.classList.add('hidden-text')
+    resetBtn.classList.add('reset-btn')
+    colorDiv.classList.add('hidden')
 }
 
 // 3. is to assign the functions to the buttons by adding them function call to the actual elements (done above in the html code)
@@ -206,7 +206,7 @@ function updateMusicBarColor(page) {
     });
 }
 
-// Calendar SVG Update Functions
+// Calendar Update Function
 window.updateCalendarSvgTime = () => {
     const calendarMonthElement = document.getElementById('calendar-month');
     const calendarDayElement = document.getElementById('calendar-day');
@@ -244,17 +244,53 @@ window.updateCalendarSvgTime = () => {
     console.log(`Updated calendar SVG: ${month} ${day}, ${timeString}`);
 }
 
-// Function to start calendar updates
-function startCalendarUpdates() {
-    // Update immediately
-    window.updateCalendarSvgTime();
-    
-    // Update every minute
-    setInterval(window.updateCalendarSvgTime, 60000);
-}
-
 // Initialize everything when DOM is loaded
 window.addEventListener('DOMContentLoaded', () => {
+    // Calendar modal logic
+    const calendarIcon = document.querySelector('.calendar-icon svg');
+    const calendarLink = document.querySelector('.calendar-icon');
+    const calendarModal = document.getElementById('calendar-modal');
+    const calendarModalContent = document.getElementById('calendar-modal-content');
+    const calendarModalSvg = document.getElementById('calendar-modal-svg');
+    const calendarModalClose = document.getElementById('calendar-modal-close');
+
+    // Tooltip update for calendar icon
+    const calendarTooltip = calendarLink.querySelector('.tooltiptext');
+    if (calendarTooltip) {
+        calendarLink.addEventListener('mouseenter', function() {
+            const now = new Date();
+            const month = now.toLocaleString('en-US', { month: 'long' });
+            const day = now.getDate();
+            calendarTooltip.textContent = `${month} ${day}`;
+        });
+        calendarLink.addEventListener('mouseleave', function() {
+            calendarTooltip.textContent = 'Calendar';
+        });
+    }
+    if (calendarIcon && calendarLink && calendarModal && calendarModalSvg && calendarModalClose) {
+        calendarLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Clone the calendar SVG
+            const clone = calendarIcon.cloneNode(true);
+            // Clear previous
+            calendarModalSvg.innerHTML = '';
+            calendarModalSvg.appendChild(clone);
+            // Style the SVG
+            clone.style.width = '340px';
+            clone.style.height = '340px';
+            clone.style.display = 'block';
+            calendarModal.style.display = 'flex';
+        });
+        calendarModalClose.addEventListener('click', function() {
+            calendarModal.style.display = 'none';
+        });
+        // Close modal when clicking outside modal content
+        calendarModal.addEventListener('click', function(e) {
+            if (e.target === calendarModal) {
+                calendarModal.style.display = 'none';
+            }
+        });
+    }
     // Initialize memory game
     createMemoryGame();
     
@@ -264,6 +300,38 @@ window.addEventListener('DOMContentLoaded', () => {
     // Start global animation once
     startAudioVisualizerLoop();
     
-    // Start calendar updates
-    startCalendarUpdates();
+    // Initialize calendar and start updates
+    updateCalendarSvgTime();
+    
+    // Update calendar every minute
+    setInterval(updateCalendarSvgTime, 60000);
+    
+    // Add event listeners for buttons and inputs
+    const playGameBtn = document.getElementById('play-game');
+    if (playGameBtn) {
+        playGameBtn.addEventListener('click', playGame);
+    }
+    
+    const resetColorBtn = document.querySelector('.color-div button');
+    if (resetColorBtn) {
+        resetColorBtn.addEventListener('click', resetColor);
+    }
+    
+    const colorPicker = document.getElementById('color-picker');
+    if (colorPicker) {
+        colorPicker.addEventListener('change', changeColor);
+    }
+    
+    const resetMemoryBtn = document.querySelector('#memory-game button');
+    if (resetMemoryBtn) {
+        resetMemoryBtn.addEventListener('click', resetMemoryGame);
+    }
+    
+    const contactLink = document.querySelector('a[data-page="Contact"]');
+    if (contactLink) {
+        contactLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            loadPage('Contact');
+        });
+    }
 });
