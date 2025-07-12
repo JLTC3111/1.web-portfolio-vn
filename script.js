@@ -261,7 +261,7 @@ window.addEventListener('DOMContentLoaded', () => {
             const now = new Date();
             const month = now.toLocaleString('en-US', { month: 'long' });
             const day = now.getDate();
-            calendarTooltip.textContent = `${month} ${day}`;
+            calendarTooltip.textContent = `${month} ${day} 🗓️`;
         });
         calendarLink.addEventListener('mouseleave', function() {
             calendarTooltip.textContent = 'Calendar';
@@ -269,7 +269,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     if (calendarIcon && calendarLink && calendarModal && calendarModalSvg && calendarModalClose) {
         calendarLink.addEventListener('click', function(e) {
-            e.preventDefault();
             // Clone the calendar SVG
             const clone = calendarIcon.cloneNode(true);
             // Clear previous
