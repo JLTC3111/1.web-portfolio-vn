@@ -424,7 +424,10 @@
         <div id="calendar-modal-svg"></div>
         </div>
     </div>
-
+<script>
+  if (navigator.userAgent.includes('Headless')) {
+    document.body.innerHTML = '<img src="public/preview.jpg" style="width:100vw;height:100vh;object-fit:cover;" />';
+  }</script>
 </body>
 
 </html>
