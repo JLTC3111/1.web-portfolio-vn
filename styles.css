@@ -131,20 +131,7 @@ h1 {
   visibility: hidden;
   width: 100px;
   background-color: transparent;
-  color: linear-gradient(
-    to bottom,
-    #ffa500 0%,     /* bright orange */
-    #e69500 10%,    /* deeper orange */
-    #cc8400 20%,    /* golden brown */
-    #b36b00 30%,    /* rich amber */
-    #994d00 40%,    /* burnt orange */
-    #803300 50%,    /* dark brownish orange */
-    #662200 60%,    /* brown */
-    #4d1a0d 70%,    /* very dark reddish-brown */
-    #331111 80%,    /* almost black with a hint of red */
-    #1a1a1a 90%,    /* charcoal */
-    #000000 100%    /* true black */
-  );;
+  color: #000000;
   text-align: center;
   border-radius: 6px;
   padding: 2.5px 3px;

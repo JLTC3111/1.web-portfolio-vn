@@ -91,7 +91,7 @@ function resetMemoryGame() {
 
 // Audio Visualizer Functions
 function initAudioVisualizer(
-    audioSrc = 'public/Lazy Love_byLD&AI.mp3',
+    audioSrc = 'public/extract.m4a',
     barSelector = '.music-bars',
     clickTargetSelector = '#visualizer'
 ) {
