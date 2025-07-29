@@ -91,7 +91,7 @@ function resetMemoryGame() {
 
 // Audio Visualizer Functions
 function initAudioVisualizer(
-    audioSrc = 'public/extract.m4a',
+    audioSrc = 'public/gut.m4a',
     barSelector = '.music-bars',
     clickTargetSelector = '#visualizer'
 ) {
