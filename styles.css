@@ -396,7 +396,7 @@ color: #0077b5; /* LinkedIn blue */
       }
       
       .video-project:hover {
-        transform: scale(1.25); /* Slight zoom-in effect */
+        transform: scale(1.25);
         transition: transform 0.3s ease-in-out;
       } 
 
