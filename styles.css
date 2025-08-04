@@ -154,6 +154,20 @@ h1 {
   opacity: 1;
 }
 
+/* Initial (hidden) state */
+.project-card {
+  filter: blur(8px);
+  opacity: 0;
+  transition: all 0.75s ease-in-out;
+}
+
+/* When AOS activates */
+.project-card.aos-animate {
+  filter: blur(0);
+  opacity: 1;
+  transition: all 0.75s ease-in-out;
+}
+
 .skill-section {
     margin-top: clamp(.25rem, 2.5vw, 1.25rem);
 }
@@ -268,7 +282,7 @@ width: fit-content;
 
 .memory-game-container button {
 display: block;
-margin: 20px auto; /* Centers horizontally */
+margin: 20px auto; 
 padding: 10px 20px;
 font-size: 16px;
 cursor: pointer;
@@ -276,7 +290,7 @@ cursor: pointer;
 
 .intro-container {
 display: flex;
-align-items: center; /* Aligns h1 and image vertically */
+align-items: center; 
 position: relative
 }
 
@@ -285,9 +299,9 @@ position: absolute;
 pointer-events: none;
 top: 0;
 left: 50%;
-transform: translateX(-46%); /* Centers the banner */
-width: 100%; /* Adjust as needed */
-height: 250px; /* Adjust as needed */
+transform: translateX(-46%); 
+width: 100%; 
+height: 250px;
 overflow: hidden;
 z-index: -1;
 }
@@ -297,31 +311,31 @@ position: absolute;
 top: 40%;
 left: 40%;
 transform: translate(-50%, -50%);
-width: 100vw;  /* Ensures it fills the screen width */
-height: auto;   /* Keeps aspect ratio */
+width: 100vw;  
+height: auto;   
 min-height: 100%;
 object-fit: cover;
 }
 
 .video-project {
 position: relative;
-width: 50vw; /* Adjust width as needed */
-max-width: 300px; /* Prevent it from being too large */
-aspect-ratio: 4 / 4; /* Maintain video ratio */
-border-radius: 10px; /* Optional: rounded corners */
-overflow: hidden; /* Ensures no weird overflow */
-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+width: 50vw; 
+max-width: 300px; 
+aspect-ratio: 4 / 4; 
+border-radius: 10px; 
+overflow: hidden; 
+box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); 
 }
   
 .video-project video {
 width: 100%;
 height: 100%;
-object-fit: cover; /* Keeps it nicely filled */
+object-fit: cover; 
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-columns: repeat(2, 1fr); 
   gap: 20px;
   max-width: 80px;
   margin: 10.5vh 10vw 0 auto;
@@ -350,19 +364,19 @@ object-fit: cover; /* Keeps it nicely filled */
 }
 
 .box a[href*="linkedin"] {
-color: #0077b5; /* LinkedIn blue */
+color: #0077b5; 
 }
 
 .flag-link {
   display: inline-block;
-  padding: 10px; /* Adjust if needed */
+  padding: 10px; 
   cursor: pointer;
 }
 
 .flag-icon {
   font-size: 20px;
   display: inline-block;
-  pointer-events: none; /* Prevent the span from hijacking clicks */
+  pointer-events: none; 
 }
 
 @media (max-width: 1366px) {
@@ -382,21 +396,21 @@ color: #0077b5; /* LinkedIn blue */
 
     .video-project {
         position: relative;
-        width: 50vw; /* Adjust width as needed */
-        max-width: 250px; /* Prevent it from being too large */
-        aspect-ratio: 4 / 3; /* Maintain video ratio */
-        float: right; /* Push it to the right side */
-        margin-left: 20px; /* Add spacing from other content */
+        width: 50vw; 
+        max-width: 250px; 
+        aspect-ratio: 4 / 3; 
+        float: right; 
+        margin-left: 20px; 
         margin-bottom: 20px;
-        border-radius: 10px; /* Optional: rounded corners */
-        overflow: hidden; /* Ensures no weird overflow */
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+        border-radius: 10px; 
+        overflow: hidden; 
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); 
       }
       
       .video-project video {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Keeps it nicely filled */
+        object-fit: cover; 
       }
       
       .video-project:hover {

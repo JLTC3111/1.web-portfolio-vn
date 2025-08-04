@@ -1,7 +1,93 @@
-// Color Game Functions
-// This is where we create the interactivity for our little color switching game
+const originalAOS = new Map();
 
-// 1. select all the html elements so that we can later manipulate them
+function cacheAOSAttributes() {
+  document.querySelectorAll('.project-card').forEach(el => {
+    if (!originalAOS.has(el)) {
+      originalAOS.set(el, el.getAttribute('data-aos'));
+    }
+  });
+}
+
+function restoreAOSAttributes() {
+  console.log('[AOS] Restoring AOS attributes');
+  originalAOS.forEach((value, el) => {
+    el.setAttribute('data-aos', value || 'flip-down');
+    el.classList.add('aos-init');
+    el.classList.remove('aos-animate');
+    el.style.opacity = null;
+    el.style.transform = null;
+    el.style.filter = null;
+  });
+
+  if (window.AOS) {
+    window.AOS.refreshHard();
+  }
+}
+
+function clearAOSAttributes() {
+  console.log('[AOS] Clearing AOS attributes');
+  document.querySelectorAll('[data-aos]').forEach(el => {
+    if (!originalAOS.has(el)) {
+      originalAOS.set(el.getAttribute('data-aos'));
+    }
+    el.removeAttribute('data-aos');
+    el.classList.remove('aos-init', 'aos-animate');
+    el.style.opacity = 1;
+    el.style.transform = 'none';
+    el.style.filter = 'none';
+  });
+}
+
+const AOSManager = (() => {
+  function handleAOSByScreenSize() {
+    const width = window.innerWidth;
+    console.log(`[AOS] Window resized to: ${width}px`);
+
+    if (typeof window.AOS === 'undefined') {
+      console.warn('[AOS] AOS library not loaded.');
+      return;
+    }
+
+    if (width < 25) {
+      console.log('[AOS] Small screen – disabling AOS');
+      clearAOSAttributes();
+    } else {
+      console.log('[AOS] Large screen mode – Enabling AOS');
+      restoreAOSAttributes();
+      window.AOS.init({
+        disable: false,
+        duration: 750,
+        offset: 100,
+        once: false
+      });
+    }
+  }
+
+  return { handleAOSByScreenSize };
+})();
+
+// Debounce utility
+function debounce(fn, delay) {
+  let timer = null;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+
+window.addEventListener('resize', debounce(() => {
+  console.log('[AOS] Resize triggered');
+  AOSManager.handleAOSByScreenSize();
+}, 50));
+
+window.addEventListener('DOMContentLoaded', () => {
+  cacheAOSAttributes();
+  console.log('[AOS] DOMContentLoaded');
+  AOSManager.handleAOSByScreenSize();
+});
+
+
+// 1. color game
 const body = document.querySelector('body')
 const colorInput = document.getElementById('color-picker')
 const colorDiv = document.querySelector('.color-div')
@@ -9,16 +95,13 @@ const hiddenText = document.querySelector('.color-div p')
 const resetBtn = document.querySelector('.color-div button')
 const playBtn = document.getElementById('play-game')
 
-// 2. create the functions 
-
 function playGame() {
-    // this function enables the play of the game by showing the color selector input
+
     colorDiv.classList.remove('hidden')
     playBtn.style.display = 'none'
 }
 
 function changeColor() {
-    // take the users selected color on the input, and assign it to be the background color of the website
     const selectedColor = colorInput.value
     body.style.background = selectedColor
     resetBtn.classList.remove('reset-btn')
@@ -36,9 +119,6 @@ function resetColor() {
     colorDiv.classList.add('hidden')
 }
 
-// 3. is to assign the functions to the buttons by adding them function call to the actual elements (done above in the html code)
-
-// Memory Game Functions
 const symbols = ['💙', '🔥', '🌟', '🚀', '🎮', '🎵', '📷', '🧩'];
 let cards = [...symbols, ...symbols];
 let flippedCards = [];
