@@ -96,7 +96,6 @@ const resetBtn = document.querySelector('.color-div button')
 const playBtn = document.getElementById('play-game')
 
 function playGame() {
-
     colorDiv.classList.remove('hidden')
     playBtn.style.display = 'none'
 }
@@ -113,7 +112,6 @@ function resetColor() {
     body.style.background = 'white'
     colorInput.style.display = 'block'
     playBtn.style.display = 'block'
-
     hiddenText.classList.add('hidden-text')
     resetBtn.classList.add('reset-btn')
     colorDiv.classList.add('hidden')
