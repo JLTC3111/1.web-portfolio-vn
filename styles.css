@@ -34,11 +34,11 @@ nav i {
 }
 
 nav a i.fa-github {
-color: black; /* GitHub icon color */
+color: black; 
 }
 
 nav a i.fa-linkedin {
-color: #0077B5; /* LinkedIn icon color (official LinkedIn blue) */
+color: #0077B5;
 }
 
 
@@ -69,14 +69,14 @@ h1 {
 }
 
 .contact-sidebar {
-    position: fixed; /* Stays in place as the user scrolls */
-    right: 1.75%; /* Adjust as needed for desired distance from the right edge */
-    top: 67%; /* Center vertically */
-    transform: translateY(-70%); /* Adjust for perfect vertical centering */
+    position: fixed;
+    right: 1.75%; 
+    top: 67%; 
+    transform: translateY(-70%); 
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    gap: 12.5px; /* Space between icons */
-    z-index: 14; /* Ensure it stays on top of other content */
+    flex-direction: column; 
+    gap: 12.5px; 
+    z-index: 14; 
     background: rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     padding: 0;
@@ -99,26 +99,30 @@ h1 {
     align-items: center;
     width:50px;
     height:50px;
-    background-color: transparent; /* Or the specific color from the image */
+    background-color: transparent; 
 }
 
 .contact-sidebar .contact-item svg {
-    width: 45%; /* Adjust icon size within the circle */
-    height: 45%; /* Adjust icon size within the circle */
+    width: 45%; 
+    height: 45%;
 }
 
-/* Hover effects for a better user experience */
-.contact-item:hover {
-    transform: scale(1.25); /* Slightly enlarge on hover */
-    transition: all 0.5s ease-in-out; /* Smooth transition */
+.contact-item:hover svg {
+  transform: rotate(-360deg) scale(1.25);
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-sidebar .music-bars:hover svg {
+  transform: rotate(-90deg);
+  transition: transform 0.3s ease-in-out;
 }
 
 .icon-bar {
-  width: 15px;            /* Or any thickness you want */
-  height: 1px;          /* Set a visible height */
+  width: 15px;           
+  height: 1px;          
   background-color:rgba(0, 0, 0, 0.25);
-  margin: -7.5px auto;     /* Space around the bar */
-  border-left: .5px dotted black; /* Creates a vertical dotted line */
+  margin: -7.5px auto;    
+  border-left: .5px dotted black; 
   border-right: .5px dotted black;
 }
 
