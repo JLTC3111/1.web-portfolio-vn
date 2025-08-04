@@ -141,7 +141,7 @@ h1 {
   padding: 2.5px 3px;
   position: absolute;
   z-index: 1;
-  bottom: 5%; /* above the icon */
+  bottom: 5%; 
   left: 0%;
   margin-left: -80px;
   opacity: 0;
@@ -380,9 +380,17 @@ color: #0077b5;
   pointer-events: none; 
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 768px) {
     .video-banner {
         max-height: 250px;
+    }
+    table td,
+    table th {
+      font-size: clamp(0.75rem, 4vw, 0.95rem);
+    }
+    .table-wrapper {
+      overflow-x: auto;
+      max-width: 100%;
     }
     .project-card {
         flex-direction: row;
