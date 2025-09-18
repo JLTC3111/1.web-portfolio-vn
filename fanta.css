@@ -336,7 +336,6 @@
         height: auto;
     }
     
-    /* Tables */
     table {
         width: fit-content;
         border: 1px solid var(--border-primary);
@@ -686,14 +685,7 @@
     gap: 10px;  
     z-index: 1000; 
  }
-   
- .intro-description {
-    max-width: max-content;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-    margin-top: 25px;
-    margin-bottom: -45px;
- }
+  
  .intro-header p {
     padding-top: 1.5rem;
     padding-bottom: 1rem;

@@ -69,6 +69,11 @@ h1 {
     font-size: clamp(1.5rem, 6vw, 2.5rem);
 }
 
+h5 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: clamp(0.75rem, 4vw, 1.25rem);
+}
+
 .contact-sidebar {
     position: fixed;
     right: 1.75%; 
@@ -174,10 +179,9 @@ h1 {
 }
 
 .intro-description {
-    max-width: 700px;
-    padding-top: 2.5rem;
-    padding-bottom: 1.5rem;
-    margin-top: 25px;
+    width: 100%;
+    max-width: 1200px !important;
+    margin-top: 4.5rem;
 }
 
 .links-container {
@@ -385,6 +389,12 @@ color: #0077b5;
     .video-banner {
         max-height: 250px;
     }
+
+    .intro-description {
+        margin-top: 2.75rem;
+      }
+    }
+
     table td,
     table th {
       font-size: clamp(0.75rem, 4vw, 0.95rem);
