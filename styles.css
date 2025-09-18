@@ -338,8 +338,8 @@ object-fit: cover;
 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr); 
-  gap: 20px;
-  max-width: 80px;
+  gap: 15px;
+  max-width: 90px;
   margin: 10.5vh 10vw 0 auto;
   margin-left: auto;
   padding: 20px;
