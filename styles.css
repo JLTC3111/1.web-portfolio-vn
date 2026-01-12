@@ -95,9 +95,6 @@ h5 {
   pointer-events: auto;
   cursor: pointer;
 }
-.contact-sidebar .music-bars svg {
-  transform: rotate(90deg);
-}
 
 .contact-sidebar .contact-item {
     display: flex;
@@ -107,21 +104,19 @@ h5 {
     height:50px !important;
     background-color: transparent; 
     transition: all 0.3s ease-in-out;
+     will-change: transform;
 }
 
 .contact-sidebar .contact-item svg {
     width: 45%; 
     height: 45%;
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
 }
 
 .contact-item:hover svg {
   transform: rotate(-360deg) scale(1.25);
-  will-change: transform;
-}
-
-.contact-sidebar .music-bars:hover svg {
-  transform: scale(1.1) !important;
-  will-change: transform;
+  
 }
 
 .icon-bar {
