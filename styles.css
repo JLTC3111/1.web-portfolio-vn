@@ -66,7 +66,20 @@ p {padding-top: 1.5rem;
 h1 {
     margin-top: -190px;
     font-family: 'Press Start 2P', cursive;
-    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    font-size: clamp(1.5rem, 2.5vw, 1.75rem);
+}
+
+.intro-header .fa-meetup {
+    font-size: clamp(2.25rem, 2.5vw, 3.5rem);
+    color: var(--color-accent);
+    animation: float 4s ease-in-out infinite;
+}
+
+.intro-header .fa-meetup:hover {
+    color: var(--color-link);
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 h5 {
