@@ -117,7 +117,7 @@
         <section>
             <div class="intro-container">
                 <div class="intro-header">
-                    <h1>Xin Chào! Tôi Là Minh...<i class="fab fa-meetup" style="margin-left: -.5%;" aria-hidden="true"></i></h1>
+                    <h1>Xin Chào! Tôi Là Minh...<i id="meetup-icon" class="fab fa-meetup" style="margin-left: -.5%;" role="button" aria-label="Open address in Google Maps" tabindex="0"></i></h1>
                     <style>
                         h1 {
                             font-family: 'Press Start 2P', cursive;
@@ -462,9 +462,19 @@
     </div>
 <script src="script.js?v=20250712" defer></script>
 <script>
-  if (navigator.userAgent.includes('Headless')) {
-    document.body.innerHTML = '<img src="public/preview.jpg" style="width:100vw;height:100vh;object-fit:cover;" />';
-  }
+    document.addEventListener('DOMContentLoaded', function () {
+        var el = document.getElementById('meetup-icon');
+        if (!el) return;
+        var mapsUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('124 Hoang Ngan street');
+        function openMap() { window.open(mapsUrl, '_blank'); }
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', openMap);
+        el.addEventListener('keypress', function (e) { if (e.key === 'Enter' || e.keyCode === 13) openMap(); });
+    });
+
+    if (navigator.userAgent.includes('Headless')) {
+        document.body.innerHTML = '<img src="public/preview.jpg" style="width:100vw;height:100vh;object-fit:cover;" />';
+    }
 </script>
 </body>
 
