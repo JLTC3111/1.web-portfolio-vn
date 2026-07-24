@@ -188,26 +188,35 @@ function initAudioVisualizer(
             return;
         }
         
-        // ❌ First-time setup
-        const audio = new Audio(audioSrc);
-        const ctx = new (window.AudioContext || window.webkitAudioContext)();
-        const source = ctx.createMediaElementSource(audio);
-        const analyser = ctx.createAnalyser();
-        
-        // Configure analyser for better visualization
-        analyser.fftSize = 256;
-        analyser.smoothingTimeConstant = 0.8;
-        
-        source.connect(analyser);
-        analyser.connect(ctx.destination);
-        
-        const freqData = new Uint8Array(analyser.frequencyBinCount);
+        // First-time setup — defer download until first play
+        const audio = new Audio();
+        audio.preload = 'none';
+        audio.src = audioSrc;
+        let mediaConnected = false;
+        let ctx, analyser, freqData;
+
+        function ensureAudioGraph() {
+            if (mediaConnected) return;
+            ctx = new (window.AudioContext || window.webkitAudioContext)();
+            const source = ctx.createMediaElementSource(audio);
+            analyser = ctx.createAnalyser();
+            analyser.fftSize = 256;
+            analyser.smoothingTimeConstant = 0.8;
+            source.connect(analyser);
+            analyser.connect(ctx.destination);
+            freqData = new Uint8Array(analyser.frequencyBinCount);
+            window.__audioVisualizer.ctx = ctx;
+            window.__audioVisualizer.analyser = analyser;
+            window.__audioVisualizer.freqData = freqData;
+            mediaConnected = true;
+        }
         
         function toggleAudio(e) {
             if (e) {
                 e.preventDefault();
                 e.stopPropagation();
             }
+            ensureAudioGraph();
             if (ctx.state === 'suspended') ctx.resume();
             audio.paused ? audio.play() : audio.pause();
         }
@@ -219,9 +228,9 @@ function initAudioVisualizer(
         // ✅ Save audio setup globally
         window.__audioVisualizer = {
             audio,
-            ctx,
-            analyser,
-            freqData,
+            ctx: null,
+            analyser: null,
+            freqData: null,
             toggleHandler: toggleAudio,
             barSelector: barSelector
         };
@@ -247,7 +256,7 @@ function startAudioVisualizerLoop() {
         const { analyser, freqData, barSelector } = av;
         const bars = document.querySelectorAll(barSelector);
         
-        if (!analyser || bars.length === 0) return;
+        if (!analyser || !freqData || bars.length === 0) return;
         
         analyser.getByteFrequencyData(freqData);
         
@@ -259,6 +268,49 @@ function startAudioVisualizerLoop() {
     }
     
     loop();
+}
+
+// Play project demos only when visible; pause when off-screen
+function initLazyProjectVideos() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const banner = document.querySelector('.video-bg');
+    const projectVideos = document.querySelectorAll('.video-proj');
+
+    if (prefersReducedMotion) {
+        if (banner) {
+            banner.pause();
+            banner.removeAttribute('autoplay');
+            banner.preload = 'none';
+        }
+        projectVideos.forEach((video) => {
+            video.pause();
+            video.preload = 'none';
+        });
+        return;
+    }
+
+    if (!('IntersectionObserver' in window)) {
+        projectVideos.forEach((video) => {
+            video.play().catch(() => {});
+        });
+        return;
+    }
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                    video.play().catch(() => {});
+                } else {
+                    video.pause();
+                }
+            });
+        },
+        { rootMargin: '100px 0px', threshold: 0.25 }
+    );
+
+    projectVideos.forEach((video) => observer.observe(video));
 }
 
 function updateMusicBarColor(page) {
@@ -365,6 +417,9 @@ window.addEventListener('DOMContentLoaded', () => {
     
     // Start global animation once
     startAudioVisualizerLoop();
+
+    // Lazy-play project videos when scrolled into view
+    initLazyProjectVideos();
     
     // Initialize calendar and start updates
     updateCalendarSvgTime();

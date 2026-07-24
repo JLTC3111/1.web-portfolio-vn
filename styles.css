@@ -453,3 +453,23 @@ color: #0077b5;
             max-width: 100%;
       }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .video-bg {
+    display: none;
+  }
+
+  .video-proj {
+    display: none;
+  }
+
+  .video-project {
+    background: #e8eef5;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
